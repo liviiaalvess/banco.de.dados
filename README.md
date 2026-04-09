@@ -1,4 +1,4 @@
-# banco.de.dados
+# banco de dados
 ## escola
 https://app.brmodeloweb.com/#!/publicview/69d7c309e56bc192cf505d0b (conceitual)
 https://app.brmodeloweb.com/#!/publicview/69d7c326e56bc192cf505d22 (logico)
