@@ -1,0 +1,156 @@
+Microsoft Windows [versão 10.0.26200.8655]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\ELTONPIRESALVES>cd C:\xampp\mysql\bin>
+A sintaxe do comando está incorreta.
+
+C:\Users\ELTONPIRESALVES>cd C:\xampp\mysql\bin
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 57
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show database
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'database' at line 1
+MariaDB [(none)]> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| loja               |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.001 sec)
+
+MariaDB [(none)]> use loja;
+Database changed
+MariaDB [loja]> describe produtos
+    -> ;
++---------------+---------------+------+-----+---------+----------------+
+| Field         | Type          | Null | Key | Default | Extra          |
++---------------+---------------+------+-----+---------+----------------+
+| id_produto    | int(11)       | NO   | PRI | NULL    | auto_increment |
+| nome          | varchar(255)  | NO   |     | NULL    |                |
+| preco         | decimal(10,2) | NO   |     | NULL    |                |
+| quant         | int(11)       | NO   |     | NULL    |                |
+| observacoes   | varchar(255)  | YES  |     | NULL    |                |
+| id_categoria  | int(11)       | YES  | MUL | NULL    |                |
+| data_cadastro | date          | YES  |     | NULL    |                |
+| marca         | date          | YES  |     | NULL    |                |
++---------------+---------------+------+-----+---------+----------------+
+8 rows in set (0.020 sec)
+
+MariaDB [loja]> select * from categorias;
++--------------+-------------+
+| id_categoria | categoria   |
++--------------+-------------+
+|            1 | eletronicos |
+|            2 | alimentos   |
+|            3 | roupas      |
+|            4 | limpeza     |
+|            5 | higiene     |
++--------------+-------------+
+5 rows in set (0.003 sec)
+
+MariaDB [loja]> insert into produtos (nome, preco, quant, observacoes, id_categoria, data_cadastro, marca) values
+    -> ('macarrao', 4.90, 150, '', 2, '2026-06-11', 'adria'),
+    -> ('vestidos', 49.90, 50, 'Tamanhos p/m/g', 3, '2026-06-11', 'nao tem'),
+    -> ('desinfetante', 6.40, 200, '', 4, '2026-06-11', 'casa'),
+    -> ('celular', 1.500, 40, '', 1, '2026-06-11', 'samsung'),
+    -> ('sabonete', 1.50, 140, '', 5, '2026-06-11', 'lux'),
+    -> ('detergente' 2.00, 300, '', 4 '2026-06-11', 'ype'),
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '2.00, 300, '', 4 '2026-06-11', 'ype'),' at line 7
+MariaDB [loja]> ByeCtrl-C -- exit!
+
+
+C:\xampp\mysql\bin> use loja
+'use' não é reconhecido como um comando interno
+ou externo, um programa operável ou um arquivo em lotes.
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 58
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use loja;
+Database changed
+MariaDB [loja]> describe produtos
+    -> ;
++---------------+---------------+------+-----+---------+----------------+
+| Field         | Type          | Null | Key | Default | Extra          |
++---------------+---------------+------+-----+---------+----------------+
+| id_produto    | int(11)       | NO   | PRI | NULL    | auto_increment |
+| nome          | varchar(255)  | NO   |     | NULL    |                |
+| preco         | decimal(10,2) | NO   |     | NULL    |                |
+| quant         | int(11)       | NO   |     | NULL    |                |
+| observacoes   | varchar(255)  | YES  |     | NULL    |                |
+| id_categoria  | int(11)       | YES  | MUL | NULL    |                |
+| data_cadastro | date          | YES  |     | NULL    |                |
+| marca         | date          | YES  |     | NULL    |                |
++---------------+---------------+------+-----+---------+----------------+
+8 rows in set (0.028 sec)
+
+MariaDB [loja]> select * from produtod;
+ERROR 1146 (42S02): Table 'loja.produtod' doesn't exist
+MariaDB [loja]> select * from produtos;
++------------+-----------------+-------+-------+-------------+--------------+---------------+------------+
+| id_produto | nome            | preco | quant | observacoes | id_categoria | data_cadastro | marca      |
++------------+-----------------+-------+-------+-------------+--------------+---------------+------------+
+|          1 | papel higienico | 17.50 |    20 |             |            5 | 2026-06-11    | 0000-00-00 |
++------------+-----------------+-------+-------+-------------+--------------+---------------+------------+
+1 row in set (0.001 sec)
+
+MariaDB [loja]> insert into produtos (nome, preco, quant, observacoes, id_categoria, data_cadastro, marca) values
+    -> ('macarrao', 4.90, 150, '', 2, '2026-06-11', 'adria'),
+    ->  ('vestidos', 49.90, 50, 'Tamanhos p/m/g', 3, '2026-06-11', 'nao tem'),
+    -> ('desinfetante', 6.40, 200, '', 4, '2026-06-11', 'casa'),
+    -> ('celular', 1.500, 40, '', 1, '2026-06-11', 'samsung'),
+    -> ('sabonete', 1.50, 140, '', 5, '2026-06-11', 'lux'),
+    -> ('detergente', 2.50, 240, '', 4, '2026-06-11', 'ype')
+    -> ;
+Query OK, 6 rows affected, 6 warnings (0.004 sec)
+Records: 6  Duplicates: 0  Warnings: 6
+
+MariaDB [loja]> insert into produtos (nome, preco, quant, observacoes, id_categoria, data_cadastro, marca) values
+    ->  ('fone', 50.00, 30, '', 1, '2026-06-11', 'apple'),
+    ->  ('moletom', 80.00, 60, 'Tamanhos p/m/g', 3, '2026-06-11', 'nao tem'),
+    ->  ('arroz', 25.00, 160, '', 2, '2026-06-11', 'raroz'),
+    ->  ('feijao', 9.90, 160, '', 2, '2026-06-11', 'tio joao');
+Query OK, 4 rows affected, 4 warnings (0.006 sec)
+Records: 4  Duplicates: 0  Warnings: 4
+
+MariaDB [loja]>  select * from produtos;
++------------+-----------------+-------+-------+----------------+--------------+---------------+------------+
+| id_produto | nome            | preco | quant | observacoes    | id_categoria | data_cadastro | marca      |
++------------+-----------------+-------+-------+----------------+--------------+---------------+------------+
+|          1 | papel higienico | 17.50 |    20 |                |            5 | 2026-06-11    | 0000-00-00 |
+|          2 | macarrao        |  4.90 |   150 |                |            2 | 2026-06-11    | 0000-00-00 |
+|          3 | vestidos        | 49.90 |    50 | Tamanhos p/m/g |            3 | 2026-06-11    | 0000-00-00 |
+|          4 | desinfetante    |  6.40 |   200 |                |            4 | 2026-06-11    | 0000-00-00 |
+|          5 | celular         |  1.50 |    40 |                |            1 | 2026-06-11    | 0000-00-00 |
+|          6 | sabonete        |  1.50 |   140 |                |            5 | 2026-06-11    | 0000-00-00 |
+|          7 | detergente      |  2.50 |   240 |                |            4 | 2026-06-11    | 0000-00-00 |
+|          8 | fone            | 50.00 |    30 |                |            1 | 2026-06-11    | 0000-00-00 |
+|          9 | moletom         | 80.00 |    60 | Tamanhos p/m/g |            3 | 2026-06-11    | 0000-00-00 |
+|         10 | arroz           | 25.00 |   160 |                |            2 | 2026-06-11    | 0000-00-00 |
+|         11 | feijao          |  9.90 |   160 |                |            2 | 2026-06-11    | 0000-00-00 |
++------------+-----------------+-------+-------+----------------+--------------+---------------+------------+
+11 rows in set (0.001 sec)
+
+MariaDB [loja]> Bye
+Ctrl-C -- exit!
