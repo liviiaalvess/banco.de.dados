@@ -1,0 +1,610 @@
+Microsoft Windows [versão 10.0.19045.5131]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\Aluno>cd C:\xampp\mysql\bin
+
+C:\xampp\mysql\bin>mysql u- root
+mysql  Ver 15.1 Distrib 10.4.27-MariaDB, for Win64 (AMD64), source revision 0946c99e7d6f7ac9dfcf3e60dae6ae85161d5ef2
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Usage: mysql [OPTIONS] [database]
+
+Default options are read from the following files in the given order:
+C:\WINDOWS\my.ini C:\WINDOWS\my.cnf C:\my.ini C:\my.cnf C:\xampp\mysql\my.ini C:\xampp\mysql\my.cnf C:\xampp\mysql\data\my.ini C:\xampp\mysql\data\my.cnf
+The following groups are read: mysql mariadb-client client client-server client-mariadb
+The following options may be given as the first argument:
+--print-defaults          Print the program argument list and exit.
+--no-defaults             Don't read default options from any option file.
+The following specify which files/extra groups are read (specified before remaining options):
+--defaults-file=#         Only read default options from the given file #.
+--defaults-extra-file=#   Read this file after the global files are read.
+--defaults-group-suffix=# Additionally read default groups with # appended as a suffix.
+
+  -?, --help          Display this help and exit.
+  -I, --help          Synonym for -?
+  --abort-source-on-error
+                      Abort 'source filename' operations in case of errors
+  --auto-rehash       Enable automatic rehashing. One doesn't need to use
+                      'rehash' to get table and field completion, but startup
+                      and reconnecting may take a longer time. Disable with
+                      --disable-auto-rehash.
+                      (Defaults to on; use --skip-auto-rehash to disable.)
+  -A, --no-auto-rehash
+                      No automatic rehashing. One has to use 'rehash' to get
+                      table and field completion. This gives a quicker start of
+                      mysql and disables rehashing on reconnect.
+  --auto-vertical-output
+                      Automatically switch to vertical output mode if the
+                      result is wider than the terminal width.
+  -B, --batch         Don't use history file. Disable interactive behavior.
+                      (Enables --silent.)
+  --binary-as-hex     Print binary data as hex
+  --character-sets-dir=name
+                      Directory for character set files.
+  --column-type-info  Display column type information.
+  -c, --comments      Preserve comments. Send comments to the server. The
+                      default is --skip-comments (discard comments), enable
+                      with --comments.
+  -C, --compress      Use compression in server/client protocol.
+  -#, --debug[=#]     This is a non-debug version. Catch this and exit.
+  --debug-check       Check memory and open file usage at exit.
+  -T, --debug-info    Print some debug info at exit.
+  -D, --database=name Database to use.
+  --default-character-set=name
+                      Set the default character set.
+  --delimiter=name    Delimiter to be used.
+  -e, --execute=name  Execute command and quit. (Disables --force and history
+                      file.)
+  --enable-cleartext-plugin
+                      Obsolete option. Exists only for MySQL compatibility.
+  -E, --vertical      Print the output of a query (rows) vertically.
+  -f, --force         Continue even if we get an SQL error. Sets
+                      abort-source-on-error to 0
+  -G, --named-commands
+                      Enable named commands. Named commands mean this program's
+                      internal commands; see mysql> help . When enabled, the
+                      named commands can be used from any line of the query,
+                      otherwise only from the first line, before an enter.
+                      Disable with --disable-named-commands. This option is
+                      disabled by default.
+  -i, --ignore-spaces Ignore space after function names.
+  --init-command=name SQL Command to execute when connecting to MariaDB server.
+                      Will automatically be re-executed when reconnecting.
+  --local-infile      Enable/disable LOAD DATA LOCAL INFILE.
+  -b, --no-beep       Turn off beep on error.
+  -h, --host=name     Connect to host.
+  -H, --html          Produce HTML output.
+  -X, --xml           Produce XML output.
+  --line-numbers      Write line numbers for errors.
+                      (Defaults to on; use --skip-line-numbers to disable.)
+  -L, --skip-line-numbers
+                      Don't write line number for errors.
+  -n, --unbuffered    Flush buffer after each query.
+  --column-names      Write column names in results.
+                      (Defaults to on; use --skip-column-names to disable.)
+  -N, --skip-column-names
+                      Don't write column names in results.
+  --sigint-ignore     Ignore SIGINT (CTRL-C).
+  -o, --one-database  Ignore statements except those that occur while the
+                      default database is the one named at the command line.
+  --pager[=name]      Pager to use to display results. If you don't supply an
+                      option, the default pager is taken from your ENV variable
+                      PAGER. Valid pagers are less, more, cat [> filename],
+                      etc. See interactive help (\h) also. This option does not
+                      work in batch mode. Disable with --disable-pager. This
+                      option is disabled by default.
+  -p, --password[=name]
+                      Password to use when connecting to server. If password is
+                      not given it's asked from the tty.
+  -W, --pipe          Use named pipes to connect to server.
+  -P, --port=#        Port number to use for connection or 0 for default to, in
+                      order of preference, my.cnf, $MYSQL_TCP_PORT,
+                      /etc/services, built-in default (3306).
+  --progress-reports  Get progress reports for long running commands (like
+                      ALTER TABLE)
+                      (Defaults to on; use --skip-progress-reports to disable.)
+  --prompt=name       Set the command line prompt to this value.
+  --protocol=name     The protocol to use for connection (tcp, socket, pipe).
+  -q, --quick         Don't cache result, print it row by row. This may slow
+                      down the server if the output is suspended. Doesn't use
+                      history file.
+  -r, --raw           Write fields without conversion. Used with --batch.
+  --reconnect         Reconnect if the connection is lost. Disable with
+                      --disable-reconnect. This option is enabled by default.
+                      (Defaults to on; use --skip-reconnect to disable.)
+  -s, --silent        Be more silent. Print results with a tab as separator,
+                      each row on new line.
+  -S, --socket=name   The socket file to use for connection.
+  --ssl               Enable SSL for connection (automatically enabled with
+                      other flags).
+  --ssl-ca=name       CA file in PEM format (check OpenSSL docs, implies
+                      --ssl).
+  --ssl-capath=name   CA directory (check OpenSSL docs, implies --ssl).
+  --ssl-cert=name     X509 cert in PEM format (implies --ssl).
+  --ssl-cipher=name   SSL cipher to use (implies --ssl).
+  --ssl-key=name      X509 key in PEM format (implies --ssl).
+  --ssl-crl=name      Certificate revocation list (implies --ssl).
+  --ssl-crlpath=name  Certificate revocation list path (implies --ssl).
+  --tls-version=name  TLS protocol version for secure connection.
+  --ssl-verify-server-cert
+                      Verify server's "Common Name" in its cert against
+                      hostname used when connecting. This option is disabled by
+                      default.
+  -t, --table         Output in table format.
+  --tee=name          Append everything into outfile. See interactive help (\h)
+                      also. Does not work in batch mode. Disable with
+                      --disable-tee. This option is disabled by default.
+  -u, --user=name     User for login if not current user.
+  -U, --safe-updates  Only allow UPDATE and DELETE that uses keys.
+  -U, --i-am-a-dummy  Synonym for option --safe-updates, -U.
+  -v, --verbose       Write more. (-v -v -v gives the table output format).
+  -V, --version       Output version information and exit.
+  -w, --wait          Wait and retry if connection is down.
+  --connect-timeout=# Number of seconds before connection timeout.
+  --max-allowed-packet=#
+                      The maximum packet length to send to or receive from
+                      server.
+  --net-buffer-length=#
+                      The buffer size for TCP/IP and socket communication.
+  --select-limit=#    Automatic limit for SELECT when using --safe-updates.
+  --max-join-size=#   Automatic limit for rows in a join when using
+                      --safe-updates.
+  --secure-auth       Refuse client connecting to server if it uses old
+                      (pre-4.1.1) protocol.
+  --server-arg=name   Send embedded server this as a parameter.
+  --show-warnings     Show warnings after every statement.
+  --plugin-dir=name   Directory for client-side plugins.
+  --default-auth=name Default authentication client-side plugin to use.
+  --binary-mode       Binary mode allows certain character sequences to be
+                      processed as data that would otherwise be treated with a
+                      special meaning by the parser. Specifically, this switch
+                      turns off parsing of all client commands except \C and
+                      DELIMITER in non-interactive mode (i.e., when binary mode
+                      is combined with either 1) piped input, 2) the --batch
+                      mysql option, or 3) the 'source' command). Also, in
+                      binary mode, occurrences of '\r\n' and ASCII '\0' are
+                      preserved within strings, whereas by default, '\r\n' is
+                      translated to '\n' and '\0' is disallowed in user input.
+  --connect-expired-password
+                      Notify the server that this client is prepared to handle
+                      expired password sandbox mode even if --batch was
+                      specified.
+
+Variables (--variable-name=value)
+and boolean options {FALSE|TRUE}  Value (after reading options)
+--------------------------------- ----------------------------------------
+abort-source-on-error             FALSE
+auto-rehash                       TRUE
+auto-vertical-output              FALSE
+binary-as-hex                     FALSE
+character-sets-dir                (No default value)
+column-type-info                  FALSE
+comments                          FALSE
+compress                          FALSE
+debug-check                       FALSE
+debug-info                        FALSE
+database                          (No default value)
+default-character-set             auto
+delimiter                         ;
+vertical                          FALSE
+force                             FALSE
+named-commands                    FALSE
+ignore-spaces                     FALSE
+init-command                      (No default value)
+local-infile                      FALSE
+no-beep                           FALSE
+host                              (No default value)
+html                              FALSE
+xml                               FALSE
+line-numbers                      TRUE
+unbuffered                        FALSE
+column-names                      TRUE
+sigint-ignore                     FALSE
+port                              0
+progress-reports                  TRUE
+prompt                            \N [\d]>
+protocol
+quick                             FALSE
+raw                               FALSE
+reconnect                         TRUE
+socket                            (No default value)
+ssl                               FALSE
+ssl-ca                            (No default value)
+ssl-capath                        (No default value)
+ssl-cert                          (No default value)
+ssl-cipher                        (No default value)
+ssl-key                           (No default value)
+ssl-crl                           (No default value)
+ssl-crlpath                       (No default value)
+tls-version                       (No default value)
+ssl-verify-server-cert            FALSE
+table                             FALSE
+user                              (No default value)
+safe-updates                      FALSE
+i-am-a-dummy                      FALSE
+connect-timeout                   0
+max-allowed-packet                16777216
+net-buffer-length                 16384
+select-limit                      1000
+max-join-size                     1000000
+secure-auth                       FALSE
+show-warnings                     FALSE
+plugin-dir                        (No default value)
+default-auth                      (No default value)
+binary-mode                       FALSE
+connect-expired-password          FALSE
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 56
+Server version: 10.4.27-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use loja
+Database changed
+MariaDB [loja]> select * from produtos;
++------------+-----------------+-------+-------+----------------+--------------+---------------+------------+
+| id_produto | nome            | preco | quant | observacoes    | id_categoria | data_cadastro | marca      |
++------------+-----------------+-------+-------+----------------+--------------+---------------+------------+
+|          1 | papel higienico | 17.50 |    20 |                |            5 | 2026-06-11    | 0000-00-00 |
+|          2 | macarrao        |  4.90 |   150 |                |            2 | 2026-06-11    | 0000-00-00 |
+|          3 | vestidos        | 49.90 |    50 | Tamanhos p/m/g |            3 | 2026-06-11    | 0000-00-00 |
+|          4 | desinfetante    |  6.40 |   200 |                |            4 | 2026-06-11    | 0000-00-00 |
+|          5 | celular         |  1.50 |    40 |                |            1 | 2026-06-11    | 0000-00-00 |
+|          6 | sabonete        |  1.50 |   140 |                |            5 | 2026-06-11    | 0000-00-00 |
+|          7 | detergente      |  2.50 |   240 |                |            4 | 2026-06-11    | 0000-00-00 |
+|          8 | fone            | 50.00 |    30 |                |            1 | 2026-06-11    | 0000-00-00 |
+|          9 | moletom         | 80.00 |    60 | Tamanhos p/m/g |            3 | 2026-06-11    | 0000-00-00 |
+|         10 | arroz           | 25.00 |   160 |                |            2 | 2026-06-11    | 0000-00-00 |
+|         11 | feijao          |  9.90 |   160 |                |            2 | 2026-06-11    | 0000-00-00 |
++------------+-----------------+-------+-------+----------------+--------------+---------------+------------+
+11 rows in set (0.002 sec)
+
+MariaDB [loja]> describe produtos;
++---------------+---------------+------+-----+---------+----------------+
+| Field         | Type          | Null | Key | Default | Extra          |
++---------------+---------------+------+-----+---------+----------------+
+| id_produto    | int(11)       | NO   | PRI | NULL    | auto_increment |
+| nome          | varchar(255)  | NO   |     | NULL    |                |
+| preco         | decimal(10,2) | NO   |     | NULL    |                |
+| quant         | int(11)       | NO   |     | NULL    |                |
+| observacoes   | varchar(255)  | YES  |     | NULL    |                |
+| id_categoria  | int(11)       | YES  | MUL | NULL    |                |
+| data_cadastro | date          | YES  |     | NULL    |                |
+| marca         | date          | YES  |     | NULL    |                |
++---------------+---------------+------+-----+---------+----------------+
+8 rows in set (0.025 sec)
+
+MariaDB [loja]>  alter table produtos change marca varchar;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'varchar' at line 1
+MariaDB [loja]>  alter table produtos change marca varchar(255);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'varchar(255)' at line 1
+MariaDB [loja]>  alter table Type change marca date varchar(255);
+ERROR 1146 (42S02): Table 'loja.type' doesn't exist
+MariaDB [loja]> ALTER TABLE produtos MODIFY COLUMN Type VARCHAR(255);
+ERROR 1054 (42S22): Unknown column 'Type' in 'produtos'
+MariaDB [loja]> ALTER TABLE produtos MODIFY COLUMN marca VARCHAR(255);
+Query OK, 11 rows affected (0.117 sec)
+Records: 11  Duplicates: 0  Warnings: 0
+
+MariaDB [loja]> describe produtos;
++---------------+---------------+------+-----+---------+----------------+
+| Field         | Type          | Null | Key | Default | Extra          |
++---------------+---------------+------+-----+---------+----------------+
+| id_produto    | int(11)       | NO   | PRI | NULL    | auto_increment |
+| nome          | varchar(255)  | NO   |     | NULL    |                |
+| preco         | decimal(10,2) | NO   |     | NULL    |                |
+| quant         | int(11)       | NO   |     | NULL    |                |
+| observacoes   | varchar(255)  | YES  |     | NULL    |                |
+| id_categoria  | int(11)       | YES  | MUL | NULL    |                |
+| data_cadastro | date          | YES  |     | NULL    |                |
+| marca         | varchar(255)  | YES  |     | NULL    |                |
++---------------+---------------+------+-----+---------+----------------+
+8 rows in set (0.022 sec)
+
+MariaDB [loja]> select * from produtos;
++------------+-----------------+-------+-------+----------------+--------------+---------------+------------+
+| id_produto | nome            | preco | quant | observacoes    | id_categoria | data_cadastro | marca      |
++------------+-----------------+-------+-------+----------------+--------------+---------------+------------+
+|          1 | papel higienico | 17.50 |    20 |                |            5 | 2026-06-11    | 0000-00-00 |
+|          2 | macarrao        |  4.90 |   150 |                |            2 | 2026-06-11    | 0000-00-00 |
+|          3 | vestidos        | 49.90 |    50 | Tamanhos p/m/g |            3 | 2026-06-11    | 0000-00-00 |
+|          4 | desinfetante    |  6.40 |   200 |                |            4 | 2026-06-11    | 0000-00-00 |
+|          5 | celular         |  1.50 |    40 |                |            1 | 2026-06-11    | 0000-00-00 |
+|          6 | sabonete        |  1.50 |   140 |                |            5 | 2026-06-11    | 0000-00-00 |
+|          7 | detergente      |  2.50 |   240 |                |            4 | 2026-06-11    | 0000-00-00 |
+|          8 | fone            | 50.00 |    30 |                |            1 | 2026-06-11    | 0000-00-00 |
+|          9 | moletom         | 80.00 |    60 | Tamanhos p/m/g |            3 | 2026-06-11    | 0000-00-00 |
+|         10 | arroz           | 25.00 |   160 |                |            2 | 2026-06-11    | 0000-00-00 |
+|         11 | feijao          |  9.90 |   160 |                |            2 | 2026-06-11    | 0000-00-00 |
++------------+-----------------+-------+-------+----------------+--------------+---------------+------------+
+11 rows in set (0.001 sec)
+
+MariaDB [loja]> UPDATE produtos SET marca = 'Samsung' WHERE id_produto = 5;
+Query OK, 1 row affected (0.012 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [loja]> select * from produtos;
++------------+-----------------+-------+-------+----------------+--------------+---------------+------------+
+| id_produto | nome            | preco | quant | observacoes    | id_categoria | data_cadastro | marca      |
++------------+-----------------+-------+-------+----------------+--------------+---------------+------------+
+|          1 | papel higienico | 17.50 |    20 |                |            5 | 2026-06-11    | 0000-00-00 |
+|          2 | macarrao        |  4.90 |   150 |                |            2 | 2026-06-11    | 0000-00-00 |
+|          3 | vestidos        | 49.90 |    50 | Tamanhos p/m/g |            3 | 2026-06-11    | 0000-00-00 |
+|          4 | desinfetante    |  6.40 |   200 |                |            4 | 2026-06-11    | 0000-00-00 |
+|          5 | celular         |  1.50 |    40 |                |            1 | 2026-06-11    | Samsung    |
+|          6 | sabonete        |  1.50 |   140 |                |            5 | 2026-06-11    | 0000-00-00 |
+|          7 | detergente      |  2.50 |   240 |                |            4 | 2026-06-11    | 0000-00-00 |
+|          8 | fone            | 50.00 |    30 |                |            1 | 2026-06-11    | 0000-00-00 |
+|          9 | moletom         | 80.00 |    60 | Tamanhos p/m/g |            3 | 2026-06-11    | 0000-00-00 |
+|         10 | arroz           | 25.00 |   160 |                |            2 | 2026-06-11    | 0000-00-00 |
+|         11 | feijao          |  9.90 |   160 |                |            2 | 2026-06-11    | 0000-00-00 |
++------------+-----------------+-------+-------+----------------+--------------+---------------+------------+
+11 rows in set (0.001 sec)
+
+MariaDB [loja]> UPDATE produtos SET marca = 'adria' WHERE id_produto = 2;
+Query OK, 1 row affected (0.005 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [loja]> UPDATE produtos SET marca = 'neve' WHERE id_produto = 1;
+Query OK, 1 row affected (0.013 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [loja]> UPDATE produtos SET marca = 'não tem' WHERE id_produto = 3;
+Query OK, 1 row affected (0.014 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [loja]> UPDATE produtos SET marca = 'casa' WHERE id_produto = 4;
+Query OK, 1 row affected (0.013 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [loja]> UPDATE produtos SET marca = 'lux' WHERE id_produto = 6;
+Query OK, 1 row affected (0.006 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [loja]> UPDATE produtos SET marca = 'ype' WHERE id_produto = 7;
+Query OK, 1 row affected (0.008 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [loja]> UPDATE produtos SET marca = 'apple' WHERE id_produto = 8;
+Query OK, 1 row affected (0.014 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [loja]> UPDATE produtos SET marca = 'não tem' WHERE id_produto = 9;
+Query OK, 1 row affected (0.012 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [loja]> UPDATE produtos SET marca = 'rarroz' WHERE id_produto = 10;
+Query OK, 1 row affected (0.005 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [loja]> UPDATE produtos SET marca = 'tio joão' WHERE id_produto = 11;
+Query OK, 1 row affected (0.013 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [loja]> select * from produtos;
++------------+-----------------+-------+-------+----------------+--------------+---------------+----------+
+| id_produto | nome            | preco | quant | observacoes    | id_categoria | data_cadastro | marca    |
++------------+-----------------+-------+-------+----------------+--------------+---------------+----------+
+|          1 | papel higienico | 17.50 |    20 |                |            5 | 2026-06-11    | neve     |
+|          2 | macarrao        |  4.90 |   150 |                |            2 | 2026-06-11    | adria    |
+|          3 | vestidos        | 49.90 |    50 | Tamanhos p/m/g |            3 | 2026-06-11    | não tem  |
+|          4 | desinfetante    |  6.40 |   200 |                |            4 | 2026-06-11    | casa     |
+|          5 | celular         |  1.50 |    40 |                |            1 | 2026-06-11    | Samsung  |
+|          6 | sabonete        |  1.50 |   140 |                |            5 | 2026-06-11    | lux      |
+|          7 | detergente      |  2.50 |   240 |                |            4 | 2026-06-11    | ype      |
+|          8 | fone            | 50.00 |    30 |                |            1 | 2026-06-11    | apple    |
+|          9 | moletom         | 80.00 |    60 | Tamanhos p/m/g |            3 | 2026-06-11    | não tem  |
+|         10 | arroz           | 25.00 |   160 |                |            2 | 2026-06-11    | rarroz   |
+|         11 | feijao          |  9.90 |   160 |                |            2 | 2026-06-11    | tio joão |
++------------+-----------------+-------+-------+----------------+--------------+---------------+----------+
+11 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT nome, preco FROM produtos;
++-----------------+-------+
+| nome            | preco |
++-----------------+-------+
+| papel higienico | 17.50 |
+| macarrao        |  4.90 |
+| vestidos        | 49.90 |
+| desinfetante    |  6.40 |
+| celular         |  1.50 |
+| sabonete        |  1.50 |
+| detergente      |  2.50 |
+| fone            | 50.00 |
+| moletom         | 80.00 |
+| arroz           | 25.00 |
+| feijao          |  9.90 |
++-----------------+-------+
+11 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT * FROM produtos WHERE marca = 'adria';
++------------+----------+-------+-------+-------------+--------------+---------------+-------+
+| id_produto | nome     | preco | quant | observacoes | id_categoria | data_cadastro | marca |
++------------+----------+-------+-------+-------------+--------------+---------------+-------+
+|          2 | macarrao |  4.90 |   150 |             |            2 | 2026-06-11    | adria |
++------------+----------+-------+-------+-------------+--------------+---------------+-------+
+1 row in set (0.001 sec)
+
+MariaDB [loja]> SELECT * FROM produtos WHERE preco > 40;
++------------+----------+-------+-------+----------------+--------------+---------------+---------+
+| id_produto | nome     | preco | quant | observacoes    | id_categoria | data_cadastro | marca   |
++------------+----------+-------+-------+----------------+--------------+---------------+---------+
+|          3 | vestidos | 49.90 |    50 | Tamanhos p/m/g |            3 | 2026-06-11    | não tem |
+|          8 | fone     | 50.00 |    30 |                |            1 | 2026-06-11    | apple   |
+|          9 | moletom  | 80.00 |    60 | Tamanhos p/m/g |            3 | 2026-06-11    | não tem |
++------------+----------+-------+-------+----------------+--------------+---------------+---------+
+3 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT * FROM produtos WHERE quant <= 30;
++------------+-----------------+-------+-------+-------------+--------------+---------------+-------+
+| id_produto | nome            | preco | quant | observacoes | id_categoria | data_cadastro | marca |
++------------+-----------------+-------+-------+-------------+--------------+---------------+-------+
+|          1 | papel higienico | 17.50 |    20 |             |            5 | 2026-06-11    | neve  |
+|          8 | fone            | 50.00 |    30 |             |            1 | 2026-06-11    | apple |
++------------+-----------------+-------+-------+-------------+--------------+---------------+-------+
+2 rows in set (0.001 sec)
+
+MariaDB [loja]> UPDATE produtos SET preco = 1.500 WHERE id_produto = 5;
+Query OK, 0 rows affected (0.001 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+MariaDB [loja]> SELECT * FROM produtos WHERE preco > 40;
++------------+----------+-------+-------+----------------+--------------+---------------+---------+
+| id_produto | nome     | preco | quant | observacoes    | id_categoria | data_cadastro | marca   |
++------------+----------+-------+-------+----------------+--------------+---------------+---------+
+|          3 | vestidos | 49.90 |    50 | Tamanhos p/m/g |            3 | 2026-06-11    | não tem |
+|          8 | fone     | 50.00 |    30 |                |            1 | 2026-06-11    | apple   |
+|          9 | moletom  | 80.00 |    60 | Tamanhos p/m/g |            3 | 2026-06-11    | não tem |
++------------+----------+-------+-------+----------------+--------------+---------------+---------+
+3 rows in set (0.001 sec)
+
+MariaDB [loja]> UPDATE produtos SET preco = 1500.00 WHERE id_produto = 5;
+Query OK, 1 row affected (0.012 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [loja]> SELECT * FROM produtos WHERE preco > 40;
++------------+----------+---------+-------+----------------+--------------+---------------+---------+
+| id_produto | nome     | preco   | quant | observacoes    | id_categoria | data_cadastro | marca   |
++------------+----------+---------+-------+----------------+--------------+---------------+---------+
+|          3 | vestidos |   49.90 |    50 | Tamanhos p/m/g |            3 | 2026-06-11    | não tem |
+|          5 | celular  | 1500.00 |    40 |                |            1 | 2026-06-11    | Samsung |
+|          8 | fone     |   50.00 |    30 |                |            1 | 2026-06-11    | apple   |
+|          9 | moletom  |   80.00 |    60 | Tamanhos p/m/g |            3 | 2026-06-11    | não tem |
++------------+----------+---------+-------+----------------+--------------+---------------+---------+
+4 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT nome, preco FROM produtos ORDER BY preco ASC LIMIT 3;
++------------+-------+
+| nome       | preco |
++------------+-------+
+| sabonete   |  1.50 |
+| detergente |  2.50 |
+| macarrao   |  4.90 |
++------------+-------+
+3 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT nome, preco FROM produtos ORDER BY preco desc LIMIT 3;
++---------+---------+
+| nome    | preco   |
++---------+---------+
+| celular | 1500.00 |
+| moletom |   80.00 |
+| fone    |   50.00 |
++---------+---------+
+3 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT COUNT(*) AS total_produtos FROM produtos;
++----------------+
+| total_produtos |
++----------------+
+|             11 |
++----------------+
+1 row in set (0.001 sec)
+
+MariaDB [loja]> SELECT AVG(preco) AS preco_medio FROM produtos;
++-------------+
+| preco_medio |
++-------------+
+|  158.872727 |
++-------------+
+1 row in set (0.000 sec)
+
+MariaDB [loja]> SELECT p.nome, c.categoria FROM produtos p JOIN categorias c ON p.id_categoria = c.id_categoria;
++-----------------+-------------+
+| nome            | categoria   |
++-----------------+-------------+
+| celular         | eletronicos |
+| fone            | eletronicos |
+| macarrao        | alimentos   |
+| arroz           | alimentos   |
+| feijao          | alimentos   |
+| vestidos        | roupas      |
+| moletom         | roupas      |
+| desinfetante    | limpeza     |
+| detergente      | limpeza     |
+| papel higienico | higiene     |
+| sabonete        | higiene     |
++-----------------+-------------+
+11 rows in set (0.008 sec)
+
+MariaDB [loja]> SELECT p.nome, p.marca, p.preco FROM produtos p JOIN categorias c ON p.id_categoria = c.id_categoria WHERE c.categoria = 'alimentos';
++----------+----------+-------+
+| nome     | marca    | preco |
++----------+----------+-------+
+| macarrao | adria    |  4.90 |
+| arroz    | rarroz   | 25.00 |
+| feijao   | tio joão |  9.90 |
++----------+----------+-------+
+3 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT c.categoria, COUNT(*) AS totalprodutos FROM produtos p JOIN categorias c ON p.id_categoria = c.id_categoria GROUP BY c.categoria;
++-------------+---------------+
+| categoria   | totalprodutos |
++-------------+---------------+
+| alimentos   |             3 |
+| eletronicos |             2 |
+| higiene     |             2 |
+| limpeza     |             2 |
+| roupas      |             2 |
++-------------+---------------+
+5 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT * FROM produtos
+    -> ;
++------------+-----------------+---------+-------+----------------+--------------+---------------+----------+
+| id_produto | nome            | preco   | quant | observacoes    | id_categoria | data_cadastro | marca    |
++------------+-----------------+---------+-------+----------------+--------------+---------------+----------+
+|          1 | papel higienico |   17.50 |    20 |                |            5 | 2026-06-11    | neve     |
+|          2 | macarrao        |    4.90 |   150 |                |            2 | 2026-06-11    | adria    |
+|          3 | vestidos        |   49.90 |    50 | Tamanhos p/m/g |            3 | 2026-06-11    | não tem  |
+|          4 | desinfetante    |    6.40 |   200 |                |            4 | 2026-06-11    | casa     |
+|          5 | celular         | 1500.00 |    40 |                |            1 | 2026-06-11    | Samsung  |
+|          6 | sabonete        |    1.50 |   140 |                |            5 | 2026-06-11    | lux      |
+|          7 | detergente      |    2.50 |   240 |                |            4 | 2026-06-11    | ype      |
+|          8 | fone            |   50.00 |    30 |                |            1 | 2026-06-11    | apple    |
+|          9 | moletom         |   80.00 |    60 | Tamanhos p/m/g |            3 | 2026-06-11    | não tem  |
+|         10 | arroz           |   25.00 |   160 |                |            2 | 2026-06-11    | rarroz   |
+|         11 | feijao          |    9.90 |   160 |                |            2 | 2026-06-11    | tio joão |
++------------+-----------------+---------+-------+----------------+--------------+---------------+----------+
+11 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT * FROM produtos
+    -> WHERE preco BETWEEN 10 AND 20;
++------------+-----------------+-------+-------+-------------+--------------+---------------+-------+
+| id_produto | nome            | preco | quant | observacoes | id_categoria | data_cadastro | marca |
++------------+-----------------+-------+-------+-------------+--------------+---------------+-------+
+|          1 | papel higienico | 17.50 |    20 |             |            5 | 2026-06-11    | neve  |
++------------+-----------------+-------+-------+-------------+--------------+---------------+-------+
+1 row in set (0.001 sec)
+
+MariaDB [loja]> SELECT * FROM produtos
+    -> WHERE nome LIKE 'P%';
++------------+-----------------+-------+-------+-------------+--------------+---------------+-------+
+| id_produto | nome            | preco | quant | observacoes | id_categoria | data_cadastro | marca |
++------------+-----------------+-------+-------+-------------+--------------+---------------+-------+
+|          1 | papel higienico | 17.50 |    20 |             |            5 | 2026-06-11    | neve  |
++------------+-----------------+-------+-------+-------------+--------------+---------------+-------+
+1 row in set (0.001 sec)
+
+MariaDB [loja]> SELECT DISTINCT marca FROM produtos;
++----------+
+| marca    |
++----------+
+| neve     |
+| adria    |
+| não tem  |
+| casa     |
+| Samsung  |
+| lux      |
+| ype      |
+| apple    |
+| rarroz   |
+| tio joão |
++----------+
+10 rows in set (0.001 sec)
+
+MariaDB [loja]>
